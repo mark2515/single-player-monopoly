@@ -13,3 +13,25 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.Outer {
+  position: relative;
+  width: 200vh;
+  height: 100vh;
+  background-color: lightblue;
+}
+
+.Inner {
+  position: absolute;
+  top: 5vh;
+  left: 10vh;
+  width: 180vh;
+  height: 90vh;
+  background-color: white;
+}
+
+.Return {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+}
