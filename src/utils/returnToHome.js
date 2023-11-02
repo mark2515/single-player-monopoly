@@ -3,8 +3,8 @@ import IconKeyboardReturn from "../icons/keyboard-return"
 
 function returnToHome () {
     return (
-        <Link to="/" className="Return">
-            <IconKeyboardReturn />
+        <Link to="/">
+            <IconKeyboardReturn className="Return"/>
         </Link>
     );
 }

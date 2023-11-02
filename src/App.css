@@ -30,8 +30,27 @@
   background-color: white;
 }
 
+.Line {
+  position: absolute;
+  left: 20%;
+  height: 100%;
+  border-left: 0.05vh solid black;
+}
+
 .Return {
   position: absolute;
-  top: 90%;
-  left: 5%;
+  top: 93%;
+  left: 1%;
+  width: 5vh;
+  height: 5vh;
+}
+
+.ID {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  padding: 0.5vh 1vh;
+  border-radius: 50%;
+  background-color: lightblue;
+  color: white;
 }
