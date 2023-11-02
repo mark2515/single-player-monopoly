@@ -6,7 +6,7 @@ export const Home = () => {
             <h1> Single-Player Monopoly </h1>
             <Link to="/play" className="Home"> PLAY </Link>
             <br />
-            <Link to="/achievements" className="Home"> ACHIEVEMENTS </Link>
+            <Link to="/achievement" className="Home"> ACHIEVEMENT </Link>
         </div>
     );
 }

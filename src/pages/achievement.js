@@ -1,6 +1,6 @@
 import returnToHome from "../utils/returnToHome";
 
-export const Achievements = () => {
+export const Achievement = () => {
     return (
         <div className="Outer">
             <div className="Inner">
