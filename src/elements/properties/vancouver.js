@@ -1,5 +1,5 @@
 export const vancouver = {
-    ids: [1, ,7, 17, 26],
+    ids: [1, 7, 17, 26],
     text: "Vancouver",
     elements: "properties",
     cost: 200,

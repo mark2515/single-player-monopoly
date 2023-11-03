@@ -40,7 +40,7 @@
 .Return {
   position: absolute;
   top: 93%;
-  left: 1%;
+  left: 2%;
   width: 5vh;
   height: 5vh;
 }
@@ -53,4 +53,21 @@
   border-radius: 50%;
   background-color: lightblue;
   color: white;
+}
+
+.Roll {
+  position: absolute;
+  top: 93%;
+  left: 16%;
+  width: 10vh;
+  height: 5vh;
+  font-size: 2vh;
+}
+
+.Dice {
+  position: absolute;
+  top: 94%;
+  left: 10%;
+  width: 3vh;
+  height: 3vh;
 }

@@ -17,8 +17,7 @@ export const Map = () => {
     function handleClick(element) {
         setInfo(<span> <p> {element.text} </p> <br /> 
         IDs: {element.ids.map((id, index)=>(id+" "))} <br />
-        Category: {element.elements} <br />
-        
+        Category: {element.elements} <br />   
         {element.elements === "properties" && <span> Cost: {element.cost} <br />
                                                     Update: {element.update} <br />
                                                     level: {element.level} <br />
@@ -26,7 +25,7 @@ export const Map = () => {
                                                     Withdraw: {element.withdraw} <br />
                                                     Toll: {element.toll} <br />
                                                     Required Goods / Purchase Price: {element.required.map((good, index)=>(<li key={index}>{`${good.good} / ${good.price}`}</li>))}</span>}
-        </span>)
+                                               </span>)
     };
     return (
         <div>
@@ -72,7 +71,8 @@ export const Map = () => {
                     <p> Player Info </p>
                     {<span> Position: {player.position} <br />
                             Money: {player.money} <br /> 
-                            Goods: {player.goods.map((good, index)=>(<li key={index}>{good}</li>))}</span>}
+                            Goods: {player.goods.map((good, index)=>(<li key={index}>{good}</li>))}
+                    </span>}
                 </div>
             </div>
 
