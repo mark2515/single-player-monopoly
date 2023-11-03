@@ -1,5 +1,5 @@
 export const go = {
-    id: [0],
+    ids: [0],
     text: "Go",
     elements: "chance"
 };

@@ -1,5 +1,6 @@
 export const vancouver = {
-    id: [1, 2, 3],
+    ids: [1, 2, 3],
     text: "Vancouver",
-    elements: "properties"
+    elements: "properties",
+    required: [{good: "apples", price: 50}, {good: "beer", price: 20}] 
 };

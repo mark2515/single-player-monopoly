@@ -1,18 +1,20 @@
 import { Space } from "./space";
 import { go } from "../elements/chance/go";
 import { vancouver } from "../elements/properties/vancouver";
+import { player } from "./player";
 import { useState } from 'react';
 
 export const Map = () => {
     const [info, setInfo] = useState("");
 
     function handleClick(element) {
-        setInfo(element.elements);
+        setInfo(<span> <p> {element.text} </p> <br /> 
+        IDs: {element.ids.map((id, index)=>(id+" "))} </span>);
     }
     return (
         <div>
-            <Space top={5} left={50} id={go.id[0]} name={go} text={go.text} onClick={()=>handleClick(go)}/>
-            <Space top={5} left={60} id={vancouver.id[0]} name={vancouver} text={vancouver.text} onClick={()=>handleClick(vancouver)}/>
+            <Space top={5} left={50} id={go.ids[0]} name={go} text={go.text} onClick={()=>handleClick(go)}/>
+            <Space top={5} left={60} id={vancouver.ids[0]} name={vancouver} text={vancouver.text} onClick={()=>handleClick(vancouver)}/>
             <Space top={5} left={70} id={2}/>
             <Space top={5} left={80} id={3}/>
             <Space top={5} left={90} id={4}/>
@@ -47,9 +49,18 @@ export const Map = () => {
             <Space top={35} left={50} id={33}/>
             <Space top={25} left={50} id={34}/>
             <Space top={15} left={50} id={35}/>
-            <div style={{position: 'absolute', top: '2vh', left: '2vh', width: '37vh', height: '80vh', border: '0.05vh solid black'}}>
+            <div style={{position: 'absolute', top: '2vh', left: '2vh', width: '37vh', height: '40vh', border: '0.05vh solid black'}}>
                 <div style={{position: 'absolute', left: '2vh', textAlign: 'left', fontSize: '2vh'}}>
-                    <p> Title </p>
+                    <p> Player Info </p>
+                    {<span> Position: {player.position} <br />
+                            Money: {player.money} <br /> 
+                            Goods: {player.goods.map((good, index)=>(<li key={index}>{good}</li>))} <br />
+                    </span>}
+                </div>
+            </div>
+
+            <div style={{position: 'absolute', top: '42vh', left: '2vh', width: '37vh', height: '40vh', border: '0.05vh solid black'}}>
+                <div style={{position: 'absolute', left: '2vh', textAlign: 'left', fontSize: '2vh'}}>
                     {info}
                 </div>
             </div>
