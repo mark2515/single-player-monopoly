@@ -1,6 +1,6 @@
-export const vancouver = {
-    ids: [1, ,7, 17, 26],
-    text: "Vancouver",
+export const montreal = {
+    ids: [5, 16, 27, 35],
+    text: "Montreal",
     elements: "properties",
     cost: 200,
     update: 50,

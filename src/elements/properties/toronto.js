@@ -1,8 +1,8 @@
-export const vancouver = {
-    ids: [1, ,7, 17, 26],
-    text: "Vancouver",
+export const toronto = {
+    ids: [2, 9, 18, 24, 33],
+    text: "Toronto",
     elements: "properties",
-    cost: 200,
+    cost: 300,
     update: 50,
     level: 0,
     sell: 200,
