@@ -1,7 +1,7 @@
 import returnToHome from "../utils/returnToHome";
 import displayDiceNumber from "../utils/displayDiceNumber";
 import { Map } from "../modules/map";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { player } from "../modules/player";
 import updatePosition from "../utils/updatePosition";
 import showFlag from "../utils/showFlag";
@@ -30,7 +30,7 @@ export const Play = () => {
                 {updatePosition(position)}
                 {showFlag(position)}
                 {passHome(number, position)}
-                {player.money >= 1700 && navigate("/youWin")}
+                {useEffect(() => {if (player.money >= 1700) {navigate("/youWin");}}, [player.money, navigate])}
 
                 {returnToHome()}
             </div>
