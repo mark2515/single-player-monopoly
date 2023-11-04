@@ -5,16 +5,20 @@ import { useState } from 'react';
 import { player } from "../modules/player";
 import updatePosition from "../utils/updatePosition";
 import showFlag from "../utils/showFlag";
+import passHome from "../utils/passHome";
+import { useNavigate } from "react-router-dom";
  
 export const Play = () => {
     const [number, setNumber] = useState(0);
     const [position, setPosition] = useState(player.position);
+    const navigate = useNavigate();
 
     function handleClick() {
         const randomNum = Math.floor(Math.random() * 6) + 1;
         setNumber(randomNum); 
-        setPosition((position + randomNum)%36);
+        setPosition((position + randomNum) % 36);
     }
+
     return (
         <div className="Outer">
             <div className="Inner">
@@ -25,6 +29,8 @@ export const Play = () => {
                 {displayDiceNumber(number)}
                 {updatePosition(position)}
                 {showFlag(position)}
+                {passHome(number, position)}
+                {player.money >= 1700 && navigate("/youWin")}
 
                 {returnToHome()}
             </div>

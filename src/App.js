@@ -4,6 +4,7 @@ import { Home } from "./pages/home";
 import { Rule } from "./pages/rule";
 import { Play } from "./pages/play";
 import { Achievement } from "./pages/achievement";
+import { YouWin } from "./pages/youWin";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/play" element={<Play />}/>
           <Route path="/rule" element={<Rule />}/>
           <Route path="/achievement" element={<Achievement />}/>
+          <Route path="/youWin" element={<YouWin />}/>
           <Route path="*" element = {<h1> PAGE NOT FOUND </h1>}/>
         </Routes>
       </Router>
