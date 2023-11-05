@@ -19,6 +19,10 @@ export const Play = () => {
         setPosition((position + randomNum) % 36);
     }
 
+    function handleSurrender() {
+       navigate("/gameOver");
+    }
+
     return (
         <div className="Outer">
             <div className="Inner">
@@ -26,6 +30,7 @@ export const Play = () => {
                 <Map />
 
                 <button onClick={handleClick} className="Roll"> ROLL ! </button>
+                <button onClick={handleSurrender} className="Surrender"> Surrender </button>
                 {displayDiceNumber(number)}
                 {updatePosition(position)}
                 {showFlag(position)}

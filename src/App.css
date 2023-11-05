@@ -71,3 +71,14 @@
   width: 3vh;
   height: 3vh;
 }
+
+.Surrender {
+  position: absolute;
+  top: 96%;
+  left: 93%;
+  width: 11vh;
+  height: 3vh;
+  font-size: 2vh;
+  background-color: black;
+  color: white;
+}
