@@ -1,14 +1,10 @@
-import returnToHome from "../utils/returnToHome";
-import restart from "../utils/restart";
+import { ReturnToHome } from "../modules/returnToHome";
 
-export const GameOver = () => {
+export function GameOver() {
     return (
         <div className="Outer">
-            <div className="Inner">
-                <h1> GAME OVER ! </h1>
-                {restart()}
-                {returnToHome()}
-            </div>
+                <h1 style={{textAlign: 'center'}}> GAME OVER ! </h1>
+                <ReturnToHome />
         </div>
     );
 }

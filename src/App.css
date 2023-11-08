@@ -1,8 +1,8 @@
-.App{
+.Home{
   text-align: center;
 }
 
-.Home {
+.HomeButtons {
   background-color: #007bff;
   color: white;
   padding: 10px 15px;
@@ -15,70 +15,69 @@
 }
 
 .Outer {
-  position: relative;
-  width: 200vh;
-  height: 100vh;
-  background-color: lightblue;
-}
-
-.Inner {
   position: absolute;
-  top: 5vh;
-  left: 10vh;
-  width: 180vh;
-  height: 90vh;
-  background-color: white;
+  width: 1000px;
+  height: 500px;
+  background-color: lightblue;
 }
 
 .Line {
   position: absolute;
-  left: 23%;
+  left: 25%;
   height: 100%;
   border-left: 0.05vh solid black;
+}
+
+.Roll {
+  position: absolute;
+  top: 93%;
+  left: 18%;
+  width: 50px;
+  height: 30px;
+  font-size: 10px;
+}
+
+.Dice {
+  position: absolute;
+  top: 94%;
+  left: 11%;
+  width: 20px;
+  height: 20px;
+}
+
+.Space {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 0.05vh solid black;
+  background-color: white;
+}
+
+.Font {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 9px;
+  height: 100%;
+  width: 100%;
+}
+
+
+.ID {
+  position: absolute;
+  right: 0%;
+  width: 15px;
+  background-color: lightcoral;
+  color: white;
+  font-size: small;
+  text-align: right;
 }
 
 .Return {
   position: absolute;
   top: 93%;
   left: 2%;
-  width: 5vh;
-  height: 5vh;
-}
-
-.ID {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  padding: 0.5vh 1vh;
-  border-radius: 50%;
-  background-color: lightblue;
-  color: white;
-}
-
-.Roll {
-  position: absolute;
-  top: 93%;
-  left: 16%;
-  width: 10vh;
-  height: 5vh;
-  font-size: 2vh;
-}
-
-.Dice {
-  position: absolute;
-  top: 94%;
-  left: 10%;
-  width: 3vh;
-  height: 3vh;
-}
-
-.Surrender {
-  position: absolute;
-  top: 96%;
-  left: 93%;
-  width: 11vh;
-  height: 3vh;
-  font-size: 2vh;
-  background-color: black;
-  color: white;
+  width: 30px;
+  height: 30px;
 }

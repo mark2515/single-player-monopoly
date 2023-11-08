@@ -1,14 +1,10 @@
-import returnToHome from "../utils/returnToHome";
-import restart from "../utils/restart";
+import { ReturnToHome } from "../modules/returnToHome";
 
-export const YouWin = () => {
+export function YouWin() {
     return (
         <div className="Outer">
-            <div className="Inner">
-                <h1> YOU WIN ! </h1>
-                {restart()}
-                {returnToHome()}
-            </div>
+                <h1 style={{textAlign: 'center'}}> YOU WIN ! </h1>
+                <ReturnToHome />
         </div>
     );
 }

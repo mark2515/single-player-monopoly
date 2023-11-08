@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
 import IconKeyboardReturn from "../icons/keyboard-return"
 
-function returnToHome () {
+export function ReturnToHome () {
     return (
         <Link to="/">
             <IconKeyboardReturn className="Return"/>
         </Link>
     );
 }
-
-export default returnToHome;

@@ -1,4 +1,4 @@
-import { Space } from "./space";
+import { Space } from "../modules/space";
 import { go } from "../elements/home/go";
 import { chance } from "../elements/chance/chance";
 import { market } from "../elements/market/market";
@@ -8,17 +8,17 @@ import { vancouver } from "../elements/properties/vancouver";
 import { calgary } from "../elements/properties/calgary";
 import { edmonton } from "../elements/properties/edmonton";
 import { ottawa } from "../elements/properties/ottawa";
-import { player } from "./player";
-import { useState } from 'react';
+import { useState } from "react";
+import { SpaceInfo } from "./spaceInfo";
 
-export const Map = () => {
-    const [info, setInfo] = useState("");
+export function Map ({position}) {
+    const [spaceInfo, setSpaceInfo] = useState("");
 
-    function handleClick(element) {
-        setInfo(<span> <p> {element.text} </p> <br /> 
+    const handleClick = (element) => {
+        setSpaceInfo(<span> <p> {element.text} </p>
         IDs: {element.ids.map((id, index)=>(id+" "))} <br />
         Category: {element.elements} <br />   
-        {element.elements === "properties" && <span> Cost: {element.cost} <br />
+        {element.elements === "Properties" && <span> Cost: {element.cost} <br />
                                                     Update: {element.update} <br />
                                                     level: {element.level} <br />
                                                     Sell: {element.sell} <br />
@@ -27,61 +27,47 @@ export const Map = () => {
                                                     Required Goods / Purchase Price: {element.required.map((good, index)=>(<li key={index}>{`${good.good} / ${good.price}`}</li>))}</span>}
                                                </span>)
     };
+
     return (
-        <div>
-            <Space top={5} left={50} id={0} text={go.text} onSpaceClick={()=>handleClick(go)}/>
-            <Space top={5} left={60} id={1} text={vancouver.text} onSpaceClick={()=>handleClick(vancouver)}/>
-            <Space top={5} left={70} id={2} text={toronto.text} onSpaceClick={()=>handleClick(toronto)}/>
-            <Space top={5} left={80} id={3} text={chance.text} onSpaceClick={()=>handleClick(chance)}/>
-            <Space top={5} left={90} id={4} text={ottawa.text} onSpaceClick={()=>handleClick(ottawa)}/>
-            <Space top={5} left={100} id={5} text={montreal.text} onSpaceClick={()=>handleClick(montreal)}/>
-            <Space top={5} left={110} id={6} text={market.text} onSpaceClick={()=>handleClick(market)}/>
-            <Space top={5} left={120} id={7} text={vancouver.text} onSpaceClick={()=>handleClick(vancouver)}/>
-            <Space top={5} left={130} id={8} text={chance.text} onSpaceClick={()=>handleClick(chance)}/>
-            <Space top={5} left={140} id={9} text={toronto.text} onSpaceClick={()=>handleClick(toronto)}/>
-            <Space top={5} left={150} id={10} text={calgary.text} onSpaceClick={()=>handleClick(calgary)}/>
-            <Space top={5} left={160} id={11} text={market.text} onSpaceClick={()=>handleClick(market)}/>
-            <Space top={15} left={160} id={12} text={edmonton.text} onSpaceClick={()=>handleClick(edmonton)}/>
-            <Space top={25} left={160} id={13} text={edmonton.text} onSpaceClick={()=>handleClick(edmonton)}/>
-            <Space top={35} left={160} id={14} text={chance.text} onSpaceClick={()=>handleClick(chance)}/>
-            <Space top={45} left={160} id={15} text={market.text} onSpaceClick={()=>handleClick(market)}/>
-            <Space top={55} left={160} id={16} text={montreal.text} onSpaceClick={()=>handleClick(montreal)}/>
-            <Space top={65} left={160} id={17} text={vancouver.text} onSpaceClick={()=>handleClick(vancouver)}/>
-            <Space top={75} left={160} id={18} text={toronto.text} onSpaceClick={()=>handleClick(toronto)}/>
-            <Space top={75} left={150} id={19} text={chance.text} onSpaceClick={()=>handleClick(chance)}/>
-            <Space top={75} left={140} id={20} text={edmonton.text} onSpaceClick={()=>handleClick(edmonton)}/>
-            <Space top={75} left={130} id={21} text={calgary.text} onSpaceClick={()=>handleClick(calgary)}/>
-            <Space top={75} left={120} id={22} text={market.text} onSpaceClick={()=>handleClick(market)}/>
-            <Space top={75} left={110} id={23} text={market.text} onSpaceClick={()=>handleClick(market)}/>
-            <Space top={75} left={100} id={24} text={toronto.text} onSpaceClick={()=>handleClick(toronto)}/>
-            <Space top={75} left={90} id={25} text={chance.text} onSpaceClick={()=>handleClick(chance)}/>
-            <Space top={75} left={80} id={26} text={vancouver.text} onSpaceClick={()=>handleClick(vancouver)}/>
-            <Space top={75} left={70} id={27} text={montreal.text} onSpaceClick={()=>handleClick(montreal)}/>
-            <Space top={75} left={60} id={28} text={market.text} onSpaceClick={()=>handleClick(market)}/>
-            <Space top={75} left={50} id={29} text={chance.text} onSpaceClick={()=>handleClick(chance)}/>
-            <Space top={65} left={50} id={30} text={ottawa.text} onSpaceClick={()=>handleClick(ottawa)}/>
-            <Space top={55} left={50} id={31} text={calgary.text} onSpaceClick={()=>handleClick(calgary)}/>
-            <Space top={45} left={50} id={32} text={market.text} onSpaceClick={()=>handleClick(market)}/>
-            <Space top={35} left={50} id={33} text={toronto.text} onSpaceClick={()=>handleClick(toronto)}/>
-            <Space top={25} left={50} id={34} text={chance.text} onSpaceClick={()=>handleClick(chance)}/>
-            <Space top={15} left={50} id={35} text={montreal.text} onSpaceClick={()=>handleClick(montreal)}/>
+        <>
+            <Space id ={0} top={50} left={300} text={go.text} position={position} onSpaceClick={()=>handleClick(go)}/>
+            <Space id ={1} top={50} left={350} text={vancouver.text} position={position} onSpaceClick={()=>handleClick(vancouver)}/>
+            <Space id ={2} top={50} left={400} text={toronto.text} position={position} onSpaceClick={()=>handleClick(toronto)}/>
+            <Space id ={3} top={50} left={450} text={chance.text} position={position} onSpaceClick={()=>handleClick(chance)}/>
+            <Space id ={4} top={50} left={500} text={ottawa.text} position={position} onSpaceClick={()=>handleClick(ottawa)}/>
+            <Space id ={5} top={50} left={550} text={montreal.text} position={position} onSpaceClick={()=>handleClick(montreal)}/>
+            <Space id ={6} top={50} left={600} text={market.text} position={position} onSpaceClick={()=>handleClick(market)}/>
+            <Space id ={7} top={50} left={650} text={vancouver.text} position={position} onSpaceClick={()=>handleClick(vancouver)}/>
+            <Space id ={8} top={50} left={700} text={chance.text} position={position} onSpaceClick={()=>handleClick(chance)}/>
+            <Space id ={9} top={50} left={750} text={toronto.text} position={position} onSpaceClick={()=>handleClick(toronto)}/>
+            <Space id ={10} top={50} left={800} text={calgary.text} position={position} onSpaceClick={()=>handleClick(calgary)}/>
+            <Space id ={11} top={50} left={850} text={market.text} position={position} onSpaceClick={()=>handleClick(market)}/>
+            <Space id ={12} top={100} left={850} text={edmonton.text} position={position} onSpaceClick={()=>handleClick(edmonton)}/>
+            <Space id ={13} top={150} left={850} text={edmonton.text} position={position} onSpaceClick={()=>handleClick(edmonton)}/>
+            <Space id ={14} top={200} left={850} text={chance.text} position={position} onSpaceClick={()=>handleClick(chance)}/>
+            <Space id ={15} top={250} left={850} text={market.text} position={position} onSpaceClick={()=>handleClick(market)}/>
+            <Space id ={16} top={300} left={850} text={montreal.text} position={position} onSpaceClick={()=>handleClick(montreal)}/>
+            <Space id ={17} top={350} left={850} text={vancouver.text} position={position} onSpaceClick={()=>handleClick(vancouver)}/>
+            <Space id ={18} top={400} left={850} text={toronto.text} position={position} onSpaceClick={()=>handleClick(toronto)}/>
+            <Space id ={19} top={400} left={800} text={chance.text} position={position} onSpaceClick={()=>handleClick(chance)}/>
+            <Space id ={20} top={400} left={750} text={edmonton.text} position={position} onSpaceClick={()=>handleClick(edmonton)}/>
+            <Space id ={21} top={400} left={700} text={calgary.text} position={position} onSpaceClick={()=>handleClick(calgary)}/>
+            <Space id ={22} top={400} left={650} text={market.text} position={position} onSpaceClick={()=>handleClick(market)}/>
+            <Space id ={23} top={400} left={600} text={market.text} position={position} onSpaceClick={()=>handleClick(market)}/>
+            <Space id ={24} top={400} left={550} text={toronto.text} position={position} onSpaceClick={()=>handleClick(toronto)}/>
+            <Space id ={25} top={400} left={500} text={chance.text} position={position} onSpaceClick={()=>handleClick(chance)}/>
+            <Space id ={26} top={400} left={450} text={vancouver.text} position={position} onSpaceClick={()=>handleClick(vancouver)}/>
+            <Space id ={27} top={400} left={400} text={montreal.text} position={position} onSpaceClick={()=>handleClick(montreal)}/>
+            <Space id ={28} top={400} left={350} text={market.text} position={position} onSpaceClick={()=>handleClick(market)}/>
+            <Space id ={29} top={400} left={300} text={chance.text} position={position} onSpaceClick={()=>handleClick(chance)}/>
+            <Space id ={30} top={350} left={300} text={ottawa.text} position={position} onSpaceClick={()=>handleClick(ottawa)}/>
+            <Space id ={31} top={300} left={300} text={calgary.text} position={position} onSpaceClick={()=>handleClick(calgary)}/>
+            <Space id ={32} top={250} left={300} text={market.text} position={position} onSpaceClick={()=>handleClick(market)}/>
+            <Space id ={33} top={200} left={300} text={toronto.text} position={position} onSpaceClick={()=>handleClick(toronto)}/>
+            <Space id ={34} top={150} left={300} text={chance.text} position={position} onSpaceClick={()=>handleClick(chance)}/>
+            <Space id ={35} top={100} left={300} text={montreal.text} position={position} onSpaceClick={()=>handleClick(montreal)}/>
 
-            <div style={{position: 'absolute', top: '2vh', left: '2vh', width: '37vh', height: '30vh', border: '0.05vh solid black'}}>
-                <div style={{position: 'absolute', left: '2vh', textAlign: 'left', fontSize: '2vh'}}>
-                    <p> Player Info </p>
-                    {<span> Position: {player.position} <br />
-                            Money: {player.money} <br /> 
-                            Goods: {player.goods.map((good, index)=>(<li key={index}>{good}</li>))}
-                    </span>}
-                </div>
-            </div>
-
-            <div style={{position: 'absolute', top: '32vh', left: '2vh', width: '37vh', height: '50vh', border: '0.05vh solid black'}}>
-                <div style={{position: 'absolute', left: '2vh', textAlign: 'left', fontSize: '2vh'}}>
-                    {info}
-                </div>
-            </div>
-
-        </div>
+            <SpaceInfo spaceInfo={spaceInfo}/>
+        </>
     );
 }

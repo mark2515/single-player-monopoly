@@ -1,4 +1,4 @@
-function getRandomGoods () {
+export function GetRandomGoods() {
     const allGoods = ["Maple Syrup", "Ice Wine", "Dark Beer", "Berry Jam", "Chocolatier Blueberries",
                     "Meat Pie", "Lobster", "Pastry", "Yellow Mustard", "Tim Hortons Coffee",
                     "Smoked Meat", "Beef Jerky", "Doughnuts", "Cheese and Deli", "Apple Cider",
@@ -17,5 +17,3 @@ function getRandomGoods () {
 
     return result;
 }
-
-export default getRandomGoods;

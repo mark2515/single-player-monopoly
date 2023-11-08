@@ -1,44 +1,54 @@
-import returnToHome from "../utils/returnToHome";
-import displayDiceNumber from "../utils/displayDiceNumber";
+import { SeperatorLine } from "../modules/seperatorLine";
+import { PlayerInfo } from "../modules/playerInfo";
+import { DisplayDiceNumber } from "../modules/displayDiceNumber";
 import { Map } from "../modules/map";
-import { useState, useEffect } from 'react';
-import { player } from "../modules/player";
-import updatePosition from "../utils/updatePosition";
-import showFlag from "../utils/showFlag";
-import passHome from "../utils/passHome";
+import { ReturnToHome } from "../modules/returnToHome";
+import { useState, useEffect } from "react";
+import { GetRandomGoods } from "../utils/GetRandomGoods";
 import { useNavigate } from "react-router-dom";
- 
-export const Play = () => {
+
+export function Play() {
     const [number, setNumber] = useState(0);
-    const [position, setPosition] = useState(player.position);
+    const [round, setRound] = useState(1);
+    const [position, setPosition] = useState(0);
+    const [money, setMoney] = useState(1500);
+    const [goods, setGoods] = useState(GetRandomGoods);
     const navigate = useNavigate();
 
-    function handleClick() {
+    const handleRoll = () => {
         const randomNum = Math.floor(Math.random() * 6) + 1;
         setNumber(randomNum); 
         setPosition((position + randomNum) % 36);
     }
 
-    function handleSurrender() {
-       navigate("/gameOver");
-    }
+    useEffect(()=>{
+        if(position - number < 0) {
+            setRound(round => round + 1);
+            setMoney(money => money + 100);
+        };
+    },[position, number])
 
-    return (
+    useEffect(()=>{
+        if( money >= 1700) {
+            navigate("/youWin");
+        };
+    },[money, navigate])
+
+    useEffect(()=>{
+        if( money <= 0) {
+            navigate("/gameOver");
+        };
+    },[money, navigate])
+
+    return(
         <div className="Outer">
-            <div className="Inner">
-                <div className="Line"></div>
-                <Map />
+            <SeperatorLine />
+            <PlayerInfo round={round} position={position} money={money} goods={goods}/>
+            <button onClick={handleRoll} className="Roll"> ROLL </button>
+            <DisplayDiceNumber number={number}/>
+            <Map position={position}/>
 
-                <button onClick={handleClick} className="Roll"> ROLL ! </button>
-                <button onClick={handleSurrender} className="Surrender"> Surrender </button>
-                {displayDiceNumber(number)}
-                {updatePosition(position)}
-                {showFlag(position)}
-                {passHome(number, position)}
-                {useEffect(() => {if (player.money >= 1700) {navigate("/youWin");}}, [player.money, navigate])}
-
-                {returnToHome()}
-            </div>
+            <ReturnToHome />
         </div>
     );
 }

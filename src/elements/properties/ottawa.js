@@ -1,7 +1,7 @@
 export const ottawa = {
     ids: [4, 30],
     text: "Ottawa",
-    elements: "properties",
+    elements: "Properties",
     cost: 200,
     update: 50,
     level: 0,

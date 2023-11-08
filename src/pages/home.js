@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
-export const Home = () => {
+export function Home() {
     return (
-        <div>
+        <div className="Home">
             <h1> Single-Player Monopoly </h1>
-            <Link to="/play" className="Home"> PLAY </Link>
+            <Link to="/play" className="HomeButtons"> PLAY </Link>
             <br />
-            <Link to="/rule" className="Home"> RULE </Link>
+            <Link to="/rule" className="HomeButtons"> RULE </Link>
             <br />
-            <Link to="/achievement" className="Home"> ACHIEVEMENT </Link>
+            <Link to="/achievement" className="HomeButtons"> ACHIEVEMENT </Link>
         </div>
     );
 }
