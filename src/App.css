@@ -109,3 +109,67 @@
   background-color: lightgreen;
   border: 0.05vh solid darkgray;
 }
+
+.FirstButton {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  width: 80px;
+  height: 80px;
+  background-color: lightcoral;
+  color: white;
+  border: 0.05vh solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+}
+
+.SecondButton {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 80px;
+  height: 80px;
+  background-color: lightcoral;
+  color: white;
+  border: 0.05vh solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+}
+
+.ThirdButton {
+  position: absolute;
+  top: 20%;
+  left: 75%;
+  width: 80px;
+  height: 80px;
+  background-color: lightcoral;
+  color: white;
+  border: 0.05vh solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+}
+
+.FourthButton {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  width: 80px;
+  height: 80px;
+  background-color: lightcoral;
+  color: white;
+  border: 0.05vh solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+}

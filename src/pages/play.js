@@ -18,12 +18,15 @@ export function Play() {
     const [money, setMoney] = useState(1500);
     const [goods, setGoods] = useState(GetRandomGoods);
     const [spaceInfo, setSpaceInfo] = useState("");
+    const [rollAllow, setRollAllow] = useState(true);
     const navigate = useNavigate();
 
     const handleRoll = () => {
-        const randomNum = Math.floor(Math.random() * 1) + 1;
-        setNumber(randomNum); 
-        setPosition((position + randomNum) % 36);
+        if(rollAllow) {
+            const randomNum = Math.floor(Math.random() * 1) + 1;
+            setNumber(randomNum); 
+            setPosition((position + randomNum) % 36);
+        }
     }
 
     const handleClick = (element) => {
@@ -81,8 +84,8 @@ export function Play() {
                 />
             ))}
             <SpaceInfo spaceInfo={spaceInfo}/>
-            <DisplayEvents event={element[position].text} position={position} money={money} setMoney={setMoney}/>
-            
+            <DisplayEvents event={element[position].text} position={position} money={money} setMoney={setMoney} setRollAllow={setRollAllow}/>
+
             <ReturnToHome />
             <Surrender />
         </div>
