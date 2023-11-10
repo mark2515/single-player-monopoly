@@ -3,9 +3,12 @@ import { PlayerInfo } from "../modules/playerInfo";
 import { DisplayDiceNumber } from "../modules/displayDiceNumber";
 import { Map } from "../modules/map";
 import { ReturnToHome } from "../modules/returnToHome";
+import { Surrender } from "../modules/surrender";
 import { useState, useEffect } from "react";
 import { GetRandomGoods } from "../utils/GetRandomGoods";
 import { useNavigate } from "react-router-dom";
+import { element } from "../elements/home/element";
+import { SpaceInfo } from "../modules/spaceInfo";
 
 export function Play() {
     const [number, setNumber] = useState(0);
@@ -16,9 +19,13 @@ export function Play() {
     const navigate = useNavigate();
 
     const handleRoll = () => {
-        const randomNum = Math.floor(Math.random() * 6) + 1;
+        const randomNum = Math.floor(Math.random() * 1) + 1;
         setNumber(randomNum); 
         setPosition((position + randomNum) % 36);
+    }
+
+    const handleEvent = (position) => {
+        console.log(element[position]);
     }
 
     useEffect(()=>{
@@ -27,6 +34,10 @@ export function Play() {
             setMoney(money => money + 100);
         };
     },[position, number])
+
+    useEffect(()=>{
+        handleEvent(position);
+    },[position])
 
     useEffect(()=>{
         if( money >= 1700) {
@@ -49,6 +60,7 @@ export function Play() {
             <Map position={position}/>
 
             <ReturnToHome />
+            <Surrender />
         </div>
     );
 }
