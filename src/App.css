@@ -99,3 +99,13 @@
 .Surrender:hover {
   background-color: black;
 }
+
+.Board {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  width: 400px;
+  height: 250px;
+  background-color: lightgreen;
+  border: 0.05vh solid darkgray;
+}

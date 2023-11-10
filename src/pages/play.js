@@ -9,6 +9,7 @@ import { Surrender } from "../modules/surrender";
 import { useState, useEffect } from "react";
 import { GetRandomGoods } from "../utils/GetRandomGoods";
 import { useNavigate } from "react-router-dom";
+import { DisplayEvents } from "../modules/displayEvents";
 
 export function Play() {
     const [number, setNumber] = useState(0);
@@ -68,7 +69,6 @@ export function Play() {
             <PlayerInfo round={round} position={position} money={money} goods={goods}/>
             <button onClick={handleRoll} className="Roll"> ROLL </button>
             <DisplayDiceNumber number={number}/>
-            
             {element.map((el, index) => (
                 <Space
                     key={index} 
@@ -80,8 +80,8 @@ export function Play() {
                     onSpaceClick={() => handleClick(el)}
                 />
             ))}
-
             <SpaceInfo spaceInfo={spaceInfo}/>
+            <DisplayEvents event={element[position].text} position={position} money={money} setMoney={setMoney}/>
             
             <ReturnToHome />
             <Surrender />
