@@ -1,4 +1,4 @@
-export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow}) {
+export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
 
     const handleEvent = (num) => {
 
@@ -11,6 +11,7 @@ export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setM
             }
             setMarketVisible(false);
             setRollAllow(true);
+            setSpaceClickAllow(true);
             return;
         }
 
@@ -18,6 +19,7 @@ export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setM
             setMoney(money - 10);
             setMarketVisible(false);
             setRollAllow(true);
+            setSpaceClickAllow(true);
         } else {
             alert("You can only have a maximum of 5 goods");
         }

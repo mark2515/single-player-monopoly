@@ -7,7 +7,6 @@ import { SpaceInfo } from "../modules/spaceInfo";
 import { ReturnToHome } from "../modules/returnToHome";
 import { Surrender } from "../modules/surrender";
 import { useState, useEffect } from "react";
-import { GetRandomGoods } from "../utils/GetRandomGoods";
 import { useNavigate } from "react-router-dom";
 import { DisplayEvents } from "../modules/displayEvents";
 
@@ -19,6 +18,7 @@ export function Play() {
     const [goods, setGoods] = useState([]);
     const [spaceInfo, setSpaceInfo] = useState("");
     const [rollAllow, setRollAllow] = useState(true);
+    const [spaceClickAllow, setSpaceClickAllow] = useState(true);
     const navigate = useNavigate();
 
     const handleRoll = () => {
@@ -78,11 +78,15 @@ export function Play() {
                     left={index >= 0 && index < 11 ? 300 + 50 * index : (index >= 11 && index < 18 ? 850 : (index >= 18 && index < 29 ? 850 - 50 * (index - 18) : 300))}
                     text={el.text}
                     position={position}
-                    onSpaceClick={() => handleClick(el)}
+                    onSpaceClick={() => {
+                        if (spaceClickAllow) {
+                            handleClick(el);
+                        }
+                    }}
                 />
             ))}
             <SpaceInfo spaceInfo={spaceInfo}/>
-            <DisplayEvents event={element[position].text} position={position} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setRollAllow={setRollAllow}/>
+            <DisplayEvents event={element[position].text} position={position} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setRollAllow={setRollAllow} setSpaceClickAllow={setSpaceClickAllow}/>
 
             <ReturnToHome />
             <Surrender />
