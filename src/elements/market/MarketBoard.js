@@ -1,3 +1,5 @@
+import { market } from "./market";
+
 export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
 
     const handleEvent = (num) => {
@@ -7,7 +9,7 @@ export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setM
                 setGoods(goods => [...goods, marketGoods[num]]);
                 setMoney(money - marketGoods[num].price);
             } else {
-                setMoney(money - 10);
+                setMoney(money - market.leave);
             }
             setMarketVisible(false);
             setRollAllow(true);
@@ -16,7 +18,7 @@ export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setM
         }
 
         if (goods.length >= 5 && num === 3) {
-            setMoney(money - 10);
+            setMoney(money - market.leave);
             setMarketVisible(false);
             setRollAllow(true);
             setSpaceClickAllow(true);
@@ -27,10 +29,10 @@ export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setM
 
     return(
         <div className="Board">
-            <div className="FirstButton" onClick={() => handleEvent(0)}> {marketGoods[0].name} / {marketGoods[0].price} </div>
-            <div className="SecondButton" onClick={() => handleEvent(1)}> {marketGoods[1].name} / {marketGoods[1].price} </div>
-            <div className="ThirdButton" onClick={() => handleEvent(2)}> {marketGoods[2].name} / {marketGoods[2].price} </div>
-            <div className="FourthButton" onClick={() => handleEvent(3)}> Leave / 10 </div>
+            <div className="FirstButton" onClick={() => handleEvent(0)}> {marketGoods[0].name} / -{marketGoods[0].price} </div>
+            <div className="SecondButton" onClick={() => handleEvent(1)}> {marketGoods[1].name} / -{marketGoods[1].price} </div>
+            <div className="ThirdButton" onClick={() => handleEvent(2)}> {marketGoods[2].name} / -{marketGoods[2].price} </div>
+            <div className="FourthButton" onClick={() => handleEvent(3)}> Leave / -{market.leave}</div>
         </div>
     );
 }

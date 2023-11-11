@@ -1,12 +1,11 @@
+import { GetRandomGoods } from "../../utils/GetRandomGoods";
+
 export const ottawa = {
     ids: [4, 30],
     text: "Ottawa",
     elements: "Properties",
-    cost: 200,
-    update: 50,
     level: 0,
-    sell: 200,
-    withdraw: 20,
-    toll: 10,
-    required: [{good: "apples", price: 50}, {good: "beer", price: 20}] 
+    update: 30,
+    leave: 15,
+    required: GetRandomGoods() 
 };

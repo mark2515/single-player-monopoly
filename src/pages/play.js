@@ -9,13 +9,16 @@ import { Surrender } from "../modules/surrender";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { DisplayEvents } from "../modules/displayEvents";
+import { market } from "../elements/market/market";
+import { vancouver } from "../elements/properties/vancouver";
+import { GetRandomGoods } from "../utils/GetRandomGoods";
 
 export function Play() {
     const [number, setNumber] = useState(0);
     const [round, setRound] = useState(1);
     const [position, setPosition] = useState(0);
     const [money, setMoney] = useState(1500);
-    const [goods, setGoods] = useState([]);
+    const [goods, setGoods] = useState(GetRandomGoods);
     const [spaceInfo, setSpaceInfo] = useState("");
     const [rollAllow, setRollAllow] = useState(true);
     const [spaceClickAllow, setSpaceClickAllow] = useState(true);
@@ -23,7 +26,8 @@ export function Play() {
 
     const handleRoll = () => {
         if(rollAllow) {
-            const randomNum = Math.floor(Math.random() * 1) + 1;
+            // const randomNum = Math.floor(Math.random() * 6) + 1;
+            const randomNum = 1;
             setNumber(randomNum); 
             setPosition((position + randomNum) % 36);
         }
@@ -32,12 +36,11 @@ export function Play() {
     const handleClick = (element) => {
         setSpaceInfo(<span> <p> {element.text} </p>
         IDs: {element.ids.map((id, index)=>(id+" "))} <br />
-        Category: {element.elements} <br />   
-        {element.elements === "Properties" && <span> Cost: {element.cost} <br />
-                                                    Update: {element.update} <br />
-                                                    level: {element.level} <br />
-                                                    Toll: {element.toll} <br />
-                                                    Required Goods / Sell Price: {element.required.map((good, index)=>(<li key={index}>{`${good.name} / ${good.sell}`}</li>))}</span>}
+        Category: {element.elements} <br />
+        Leave: {element.leave} $ <br /> <br />  
+        {element.elements === "Properties" && <span> Level: {element.level} <br />
+                                                    Update: {element.update} $ <br />
+                                                    Required Goods / Sell Price: {element.required.map((good, index)=>(<li key={index}>{`${good.name} / ${good.sell} $`}</li>))}</span>}
                                                </span>)
     };
 
@@ -45,6 +48,8 @@ export function Play() {
         if(position - number < 0) {
             setRound(round => round + 1);
             setMoney(money => money + 100);
+            market.leave += 5;
+            vancouver.leave += 5;
         };
     },[position, number])
 
@@ -86,7 +91,7 @@ export function Play() {
                 />
             ))}
             <SpaceInfo spaceInfo={spaceInfo}/>
-            <DisplayEvents event={element[position].text} position={position} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setRollAllow={setRollAllow} setSpaceClickAllow={setSpaceClickAllow}/>
+            <DisplayEvents event={element[position].elements} position={position} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setRollAllow={setRollAllow} setSpaceClickAllow={setSpaceClickAllow}/>
 
             <ReturnToHome />
             <Surrender />
