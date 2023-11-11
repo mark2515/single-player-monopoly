@@ -1,3 +1,5 @@
+import { GetRandomGoods } from "../../utils/GetRandomGoods";
+
 export const vancouver = {
     ids: [1, 7, 17, 26],
     text: "Vancouver",
@@ -8,5 +10,5 @@ export const vancouver = {
     sell: 200,
     withdraw: 20,
     toll: 10,
-    required: [{good: "apples", price: 50}, {good: "beer", price: 20}, {good: "bananas", price: 10}] 
+    required: GetRandomGoods() 
 };

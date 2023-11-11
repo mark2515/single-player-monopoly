@@ -16,7 +16,7 @@ export function Play() {
     const [round, setRound] = useState(1);
     const [position, setPosition] = useState(0);
     const [money, setMoney] = useState(1500);
-    const [goods, setGoods] = useState(GetRandomGoods);
+    const [goods, setGoods] = useState([]);
     const [spaceInfo, setSpaceInfo] = useState("");
     const [rollAllow, setRollAllow] = useState(true);
     const navigate = useNavigate();
@@ -36,10 +36,8 @@ export function Play() {
         {element.elements === "Properties" && <span> Cost: {element.cost} <br />
                                                     Update: {element.update} <br />
                                                     level: {element.level} <br />
-                                                    Sell: {element.sell} <br />
-                                                    Withdraw: {element.withdraw} <br />
                                                     Toll: {element.toll} <br />
-                                                    Required Goods / Purchase Price: {element.required.map((good, index)=>(<li key={index}>{`${good.good} / ${good.price}`}</li>))}</span>}
+                                                    Required Goods / Sell Price: {element.required.map((good, index)=>(<li key={index}>{`${good.name} / ${good.sell}`}</li>))}</span>}
                                                </span>)
     };
 
@@ -84,7 +82,7 @@ export function Play() {
                 />
             ))}
             <SpaceInfo spaceInfo={spaceInfo}/>
-            <DisplayEvents event={element[position].text} position={position} money={money} setMoney={setMoney} setRollAllow={setRollAllow}/>
+            <DisplayEvents event={element[position].text} position={position} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setRollAllow={setRollAllow}/>
 
             <ReturnToHome />
             <Surrender />

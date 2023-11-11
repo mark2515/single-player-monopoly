@@ -2,7 +2,7 @@ import { GetRandomGoods } from "../utils/GetRandomGoods";
 import { useState, useEffect } from "react";
 import { MarketBoard } from "../elements/market/MarketBoard";
 
-export function DisplayEvents({ position, event, money, setMoney, setRollAllow }) {
+export function DisplayEvents({ position, event, money, setMoney, goods, setGoods, setRollAllow }) {
     const [marketVisible, setMarketVisible] = useState(true);
     const [lastPosition, setLastPosition] = useState(null);
     const marketGoods = GetRandomGoods();
@@ -21,7 +21,7 @@ export function DisplayEvents({ position, event, money, setMoney, setRollAllow }
 
     if (event === "Market") {
         return (
-            marketVisible && <MarketBoard marketGoods={marketGoods} money={money} setMoney={setMoney} setMarketVisible={setMarketVisible} setRollAllow={setRollAllow}/>
+            marketVisible && <MarketBoard marketGoods={marketGoods} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setMarketVisible={setMarketVisible} setRollAllow={setRollAllow}/>
         );
     }
 }
