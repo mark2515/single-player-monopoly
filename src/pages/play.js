@@ -11,7 +11,6 @@ import { Surrender } from "../modules/surrender";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { market } from "../elements/market/market";
-import { chance } from "../elements/chance/chance";
 import { toronto } from "../elements/properties/toronto";
 import { montreal } from "../elements/properties/montreal";
 import { vancouver } from "../elements/properties/vancouver";
@@ -33,7 +32,8 @@ export function Play() {
 
     const handleRoll = () => {
         if(rollAllow) {
-            const randomNum = Math.floor(Math.random() * 6) + 1;
+            //const randomNum = Math.floor(Math.random() * 6) + 1;
+            const randomNum = 3;
             setNumber(randomNum); 
             setPosition((position + randomNum) % 36);
         }
@@ -54,8 +54,7 @@ export function Play() {
         if(position - number < 0) {
             setRound(round => round + 1);
             setMoney(money => money + 100);
-            market.leave += 5;
-            chance.leave += 5;
+            market.leave = Math.ceil(market.leave * 2.3);
             toronto.leave += 5;
             montreal.leave += 5;
             vancouver.leave += 5;
@@ -96,7 +95,7 @@ export function Play() {
                     left={index >= 0 && index < 11 ? 300 + 50 * index : (index >= 11 && index < 18 ? 850 : (index >= 18 && index < 29 ? 850 - 50 * (index - 18) : 300))}
                     text={el.text}
                     position={position}
-                    onSpaceClick={() => {handleClick(el);}}
+                    onSpaceClick={() => {handleClick(el)}}
                 />
             ))}
             <SpaceInfo spaceInfo={spaceInfo}/>
