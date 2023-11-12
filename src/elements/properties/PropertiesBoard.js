@@ -1,6 +1,6 @@
 import { hasInvolved } from "../../utils/hasInvolved";
 
-export function PropertiesBoard({property, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
+export function PropertiesBoard({property, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow}) {
 
     const handleEvent = (num) => {
 
@@ -16,7 +16,6 @@ export function PropertiesBoard({property, money, setMoney, goods, setGoods, set
 
                     setMarketVisible(false);
                     setRollAllow(true);
-                    setSpaceClickAllow(true);
                     return;
                 }
             }
@@ -32,7 +31,6 @@ export function PropertiesBoard({property, money, setMoney, goods, setGoods, set
 
             setMarketVisible(false);
             setRollAllow(true);
-            setSpaceClickAllow(true);
             return;
             
         }
@@ -42,7 +40,6 @@ export function PropertiesBoard({property, money, setMoney, goods, setGoods, set
 
             setMarketVisible(false);
             setRollAllow(true);
-            setSpaceClickAllow(true);
             return;
             
         }

@@ -2,7 +2,7 @@ import { chance } from "./chance";
 import { GetRandomChance } from "../../utils/GetRandomChance";
 
 
-export function ChanceBoard({money, setMoney, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
+export function ChanceBoard({money, setMoney, setMarketVisible, setRollAllow}) {
 
     const handleEvent = (num) => {
 
@@ -12,7 +12,6 @@ export function ChanceBoard({money, setMoney, setMarketVisible, setRollAllow, se
             setMoney(money + chance.money)
             setMarketVisible(false);
             setRollAllow(true);
-            setSpaceClickAllow(true);
             return;
             
         }
@@ -22,7 +21,6 @@ export function ChanceBoard({money, setMoney, setMarketVisible, setRollAllow, se
 
             setMarketVisible(false);
             setRollAllow(true);
-            setSpaceClickAllow(true);
             return;
             
         }
