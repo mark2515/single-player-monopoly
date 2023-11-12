@@ -3,7 +3,7 @@ import { ReturnToHome } from "../modules/returnToHome";
 export function Rules() {
     return (
         <div className="Outer">
-            <div>
+            <div style={{position: 'absolute', left: '2%'}}>
                 <p style={{fontWeight: 'bold'}}>Game Rules</p>
                 • Each turn, you get to roll the dice once and advance the number of spaces indicated by the dice <br />
                 • The board consists of different types of Spaces: Properties, Market, and Chance, each offering distinct choices <br />
