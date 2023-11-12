@@ -1,10 +1,7 @@
 import { chance } from "./chance";
 import { GetRandomChance } from "../../utils/GetRandomChance";
-import { GetRandomGoods } from "../../utils/GetRandomGoods";
-
 
 export function ChanceBoard({money, setMoney, goods, setGoods, setMarketVisible, setRollAllow}) {
-    const drawGood = GetRandomGoods()[0];
 
     const handleEvent = (num) => {
 
@@ -19,10 +16,10 @@ export function ChanceBoard({money, setMoney, goods, setGoods, setMarketVisible,
         }
 
         if(num === 1) {
-            if(goods[0].name === drawGood.name){
+            if(goods[0].name === chance.goods[0].name){
                 const newGoods = goods.slice(1);
                 setGoods(newGoods);
-                setMoney(money + drawGood.price * 3)
+                setMoney(money + chance.goods[0].price * 5)
                 setMarketVisible(false);
                 setRollAllow(true);
                 return;
@@ -41,7 +38,7 @@ export function ChanceBoard({money, setMoney, goods, setGoods, setMarketVisible,
     return(
         <div className="ChanceBoard">
             <div className="FirstButton" onClick={() => handleEvent(0)}> Random Event </div>
-            <div className="SecondButton" onClick={() => handleEvent(1)}> Draw:{drawGood.name} / +{drawGood.price * 3}</div>
+            <div className="SecondButton" onClick={() => handleEvent(1)}> Draw:{chance.goods[0].name} / +{chance.goods[0].price * 5}</div>
             <div className="ThirdButton" onClick={() => handleEvent(2)}> Leave / -{chance.leave}</div>
         </div>
     );

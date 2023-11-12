@@ -11,6 +11,7 @@ import { Surrender } from "../modules/surrender";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { market } from "../elements/market/market";
+import { chance } from "../elements/chance/chance";
 import { toronto } from "../elements/properties/toronto";
 import { montreal } from "../elements/properties/montreal";
 import { vancouver } from "../elements/properties/vancouver";
@@ -32,8 +33,7 @@ export function Play() {
 
     const handleRoll = () => {
         if(rollAllow) {
-            //const randomNum = Math.floor(Math.random() * 6) + 1;
-            const randomNum = 3;
+            const randomNum = Math.floor(Math.random() * 6) + 1;
             setNumber(randomNum); 
             setPosition((position + randomNum) % 36);
         }
@@ -66,10 +66,11 @@ export function Play() {
     useEffect(()=>{
         handleClick(element[position]);
         market.goods = GetRandomGoods();
+        chance.goods = GetRandomGoods();
     },[position])
 
     useEffect(()=>{
-        if( money >= 3000) {
+        if( money >= 15000) {
             navigate("/youWin");
         };
     },[money, navigate])

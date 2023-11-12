@@ -6,7 +6,7 @@ export function ShowGameRules () {
                 • Each turn, you get to roll the dice once and advance the number of spaces indicated by the dice <br />
                 • The board consists of different types of Spaces: Properties, Market, and Chance, each offering distinct choices <br />
                 • Upon landing on a space, you must make a choice to complete your turn and continue moving forward <br />
-                • The game is won when your assets reach $3,000 <br />
+                • The game is won when your assets reach $15,000 <br />
                 • The game ends if your assets fall into negative figures <br />
 
                 <br />[Properties] <br />
@@ -22,7 +22,7 @@ export function ShowGameRules () {
                 <br />[Chance] <br />
 
                 - Random events: Gain or lose money <br />
-                - Draw: If the first good in your inventory matches the drawn good, you can sell it for three times the purchase price
+                - Draw: If the first good in your inventory matches the drawn good, you can sell it for five times the purchase price
             </div>
         </div>
     );

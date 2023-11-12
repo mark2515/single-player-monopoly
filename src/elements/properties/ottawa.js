@@ -6,6 +6,6 @@ export const ottawa = {
     elements: "Properties",
     level: 0,
     update: 150,
-    leave: 50,
+    leave: 60,
     required: GetRandomGoods() 
 };

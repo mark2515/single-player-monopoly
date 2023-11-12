@@ -26,7 +26,7 @@ export function PropertiesBoard({property, money, setMoney, goods, setGoods, set
             property.level += 1;
             property.update += 50;
             for (let i = 0; i < property.required.length; i++) {
-                property.required[i].sell = Math.ceil(property.required[i].sell * (property.level + 1));
+                property.required[i].sell = Math.ceil(property.required[i].sell * 0.7 * (property.level + 1));
             }
 
             setMarketVisible(false);

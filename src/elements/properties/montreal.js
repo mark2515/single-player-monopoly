@@ -6,6 +6,6 @@ export const montreal = {
     elements: "Properties",
     level: 0,
     update: 250,
-    leave: 30,
+    leave: 40,
     required: GetRandomGoods() 
 };
