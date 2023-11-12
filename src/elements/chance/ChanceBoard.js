@@ -2,13 +2,13 @@ import { chance } from "./chance";
 import { GetRandomChance } from "../../utils/GetRandomChance";
 
 
-export function ChanceBoard({money, setMoney, goods, setGoods, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
+export function ChanceBoard({money, setMoney, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
 
     const handleEvent = (num) => {
 
         if(num === 0) {
             const chance = GetRandomChance();
-            alert(chance.name + (chance.money > 0 ? " +" : " -") + chance.money);
+            alert(chance.name + (chance.money > 0 ? " +" : " ") + chance.money);
             setMoney(money + chance.money)
             setMarketVisible(false);
             setRollAllow(true);

@@ -1,3 +1,5 @@
+import { hasInvolved } from "../../utils/hasInvolved";
+
 export function PropertiesBoard({property, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
 
     const handleEvent = (num) => {
@@ -49,9 +51,9 @@ export function PropertiesBoard({property, money, setMoney, goods, setGoods, set
 
     return(
         <div className="PropertiesBoard">
-            <div className="FirstButton" onClick={() => handleEvent(0)}> {property.required[0].name} / +{property.required[0].sell} </div>
-            <div className="SecondButton" onClick={() => handleEvent(1)}> {property.required[1].name} / +{property.required[1].sell} </div>
-            <div className="ThirdButton" onClick={() => handleEvent(2)}> {property.required[2].name} / +{property.required[2].sell} </div>
+            {hasInvolved(property.required[0], goods) ? <div className="FirstButton" style={{backgroundColor: 'red'}} onClick={() => handleEvent(0)}> {property.required[0].name} / +{property.required[0].sell} </div> : <div className="FirstButton"> {property.required[0].name} / +{property.required[0].sell} </div>}
+            {hasInvolved(property.required[1], goods) ? <div className="SecondButton" style={{backgroundColor: 'red'}} onClick={() => handleEvent(1)}> {property.required[1].name} / +{property.required[1].sell} </div> : <div className="SecondButton"> {property.required[1].name} / +{property.required[1].sell} </div>}
+            {hasInvolved(property.required[2], goods) ? <div className="ThirdButton" style={{backgroundColor: 'red'}} onClick={() => handleEvent(2)}> {property.required[2].name} / +{property.required[2].sell} </div> : <div className="ThirdButton"> {property.required[2].name} / +{property.required[2].sell} </div>}
             <div className="FourthButton" onClick={() => handleEvent(3)}> Update / -{property.update} </div>
             <div className="FifthButton" onClick={() => handleEvent(4)}> Leave / -{property.leave} </div>
         </div>

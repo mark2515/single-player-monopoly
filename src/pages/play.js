@@ -27,7 +27,7 @@ export function Play() {
     const handleRoll = () => {
         if(rollAllow) {
             // const randomNum = Math.floor(Math.random() * 6) + 1;
-            const randomNum = 3;
+            const randomNum = 1;
             setNumber(randomNum); 
             setPosition((position + randomNum) % 36);
         }
