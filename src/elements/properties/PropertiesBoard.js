@@ -1,5 +1,3 @@
-import { vancouver } from "./vancouver";
-
 export function PropertiesBoard({property, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
 
     const handleEvent = (num) => {
@@ -50,7 +48,7 @@ export function PropertiesBoard({property, money, setMoney, goods, setGoods, set
     }
 
     return(
-        <div className="Board">
+        <div className="PropertiesBoard">
             <div className="FirstButton" onClick={() => handleEvent(0)}> {property.required[0].name} / +{property.required[0].sell} </div>
             <div className="SecondButton" onClick={() => handleEvent(1)}> {property.required[1].name} / +{property.required[1].sell} </div>
             <div className="ThirdButton" onClick={() => handleEvent(2)}> {property.required[2].name} / +{property.required[2].sell} </div>

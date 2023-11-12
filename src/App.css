@@ -100,14 +100,34 @@
   background-color: black;
 }
 
-.Board {
+.MarketBoard {
   position: absolute;
   top: 25%;
   left: 40%;
   width: 400px;
   height: 250px;
   background-color: lightgreen;
-  border: 0.05vh solid darkgray;
+  border: 0.4vh solid black;
+}
+
+.PropertiesBoard {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  width: 400px;
+  height: 250px;
+  background-color: lightsalmon;
+  border: 0.4vh solid black;
+}
+
+.ChanceBoard {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  width: 400px;
+  height: 250px;
+  background-color: plum;
+  border: 0.4vh solid black;
 }
 
 .FirstButton {
@@ -118,7 +138,7 @@
   height: 80px;
   background-color: lightcoral;
   color: white;
-  border: 0.05vh solid black;
+  border: 0.3vh solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +154,7 @@
   height: 80px;
   background-color: lightcoral;
   color: white;
-  border: 0.05vh solid black;
+  border: 0.3vh solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +170,7 @@
   height: 80px;
   background-color: lightcoral;
   color: white;
-  border: 0.05vh solid black;
+  border: 0.3vh solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,7 +186,7 @@
   height: 80px;
   background-color: lightcoral;
   color: white;
-  border: 0.05vh solid black;
+  border: 0.3vh solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +202,7 @@
   height: 80px;
   background-color: lightcoral;
   color: white;
-  border: 0.05vh solid black;
+  border: 0.3vh solid black;
   display: flex;
   justify-content: center;
   align-items: center;

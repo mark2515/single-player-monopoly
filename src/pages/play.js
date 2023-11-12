@@ -27,7 +27,7 @@ export function Play() {
     const handleRoll = () => {
         if(rollAllow) {
             // const randomNum = Math.floor(Math.random() * 6) + 1;
-            const randomNum = 1;
+            const randomNum = 3;
             setNumber(randomNum); 
             setPosition((position + randomNum) % 36);
         }
@@ -58,7 +58,7 @@ export function Play() {
     },[position])
 
     useEffect(()=>{
-        if( money >= 1700) {
+        if( money >= 3000) {
             navigate("/youWin");
         };
     },[money, navigate])

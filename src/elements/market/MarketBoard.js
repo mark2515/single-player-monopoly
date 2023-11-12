@@ -1,6 +1,8 @@
 import { market } from "./market";
+import { GetRandomGoods } from "../../utils/GetRandomGoods";
 
-export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
+export function MarketBoard({money, setMoney, goods, setGoods, setMarketVisible, setRollAllow, setSpaceClickAllow}) {
+    const marketGoods = GetRandomGoods();
 
     const handleEvent = (num) => {
 
@@ -28,7 +30,7 @@ export function MarketBoard({marketGoods, money, setMoney, goods, setGoods, setM
     }
 
     return(
-        <div className="Board">
+        <div className="MarketBoard">
             <div className="FirstButton" onClick={() => handleEvent(0)}> {marketGoods[0].name} / -{marketGoods[0].price} </div>
             <div className="SecondButton" onClick={() => handleEvent(1)}> {marketGoods[1].name} / -{marketGoods[1].price} </div>
             <div className="ThirdButton" onClick={() => handleEvent(2)}> {marketGoods[2].name} / -{marketGoods[2].price} </div>
