@@ -6,7 +6,7 @@ export function PlayerInfo ({round, position, money, goods}) {
                 <span> 
                     Round: {round} <br />
                     Position: {position} <br />
-                    Money: {money} $ <br />
+                    Money: ${money} <br />
                     Goods: {goods.map((good, index)=>(<li key={index}>{good.name}</li>))}
                 </span>
             </div>

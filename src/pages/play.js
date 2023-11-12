@@ -32,7 +32,8 @@ export function Play() {
 
     const handleRoll = () => {
         if(rollAllow) {
-            const randomNum = Math.floor(Math.random() * 6) + 1;
+            //const randomNum = Math.floor(Math.random() * 6) + 1;
+            const randomNum = 3;
             setNumber(randomNum); 
             setPosition((position + randomNum) % 36);
         }
@@ -42,10 +43,10 @@ export function Play() {
         setSpaceInfo(<span> <p> {element.text} </p>
         IDs: {element.ids.map((id, index)=>(id+" "))} <br />
         Category: {element.elements} <br />
-        Leave: {element.leave} $ <br /> <br />  
+        Leave: ${element.leave} <br /> <br />  
         {element.elements === "Properties" && <span> Level: {element.level} <br />
-                                                    Update: {element.update} $ <br />
-                                                    Required Goods / Sell Price: {element.required.map((good, index)=>(<li key={index}>{`${good.name} / ${good.sell} $`}</li>))}</span>}
+                                                    Update: ${element.update} <br />
+                                                    Required Goods / Sell Price: {element.required.map((good, index)=>(<li key={index}>{`${good.name} / $${good.sell}`}</li>))}</span>}
                                                </span>)
     };
 
@@ -74,7 +75,7 @@ export function Play() {
     },[money, navigate])
 
     useEffect(()=>{
-        if( money <= 0) {
+        if( money < 0) {
             navigate("/gameOver");
         };
     },[money, navigate])

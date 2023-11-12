@@ -1,6 +1,8 @@
-export function ShowGameRules () {
+import { ReturnToHome } from "../modules/returnToHome";
+
+export function Rules() {
     return (
-        <div className="Rules">
+        <div className="Outer">
             <div>
                 <p style={{fontWeight: 'bold'}}>Game Rules</p>
                 • Each turn, you get to roll the dice once and advance the number of spaces indicated by the dice <br />
@@ -24,6 +26,8 @@ export function ShowGameRules () {
                 - Random events: Gain or lose money <br />
                 - Draw: If the first good in your inventory matches the drawn good, you can sell it for three times the purchase price
             </div>
+
+                <ReturnToHome />
         </div>
     );
 }

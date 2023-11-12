@@ -30,7 +30,7 @@ export function DisplayEvents({ position, event, money, setMoney, goods, setGood
     }
     if (event === "Chance") {
         return (
-            marketVisible && <ChanceBoard money={money} setMoney={setMoney} goods={goods} setMarketVisible={setMarketVisible} setRollAllow={setRollAllow}/>
+            marketVisible && <ChanceBoard money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setMarketVisible={setMarketVisible} setRollAllow={setRollAllow}/>
         );
     }
 }

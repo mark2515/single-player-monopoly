@@ -3,7 +3,7 @@ import { GetRandomChance } from "../../utils/GetRandomChance";
 import { GetRandomGoods } from "../../utils/GetRandomGoods";
 
 
-export function ChanceBoard({money, setMoney, goods, setMarketVisible, setRollAllow}) {
+export function ChanceBoard({money, setMoney, goods, setGoods, setMarketVisible, setRollAllow}) {
     const drawGood = GetRandomGoods()[0];
 
     const handleEvent = (num) => {
@@ -20,19 +20,19 @@ export function ChanceBoard({money, setMoney, goods, setMarketVisible, setRollAl
 
         if(num === 1) {
             if(goods[0].name === drawGood.name){
+                const newGoods = goods.slice(1);
+                setGoods(newGoods);
                 setMoney(money + drawGood.price * 3)
                 setMarketVisible(false);
                 setRollAllow(true);
-            return;
+                return;
             }
         }
 
         if(num === 2) {
-            
             setMoney(money - chance.leave)
             setMarketVisible(false);
             setRollAllow(true);
-            
             return;
             
         }
