@@ -6,9 +6,9 @@ export function Home() {
             <h1> Single-Player Monopoly </h1>
             <Link to="/play" className="HomeButtons"> PLAY </Link>
             <br />
-            <Link to="/rule" className="HomeButtons"> RULE </Link>
+            <Link to="/rules" className="HomeButtons"> RULES </Link>
             <br />
-            <Link to="/achievement" className="HomeButtons"> ACHIEVEMENT </Link>
+            <Link to="/credits" className="HomeButtons"> CREDITS </Link>
         </div>
     );
 }

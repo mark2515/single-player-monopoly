@@ -1,4 +1,8 @@
 .Home{
+  position: absolute;
+  width: 1000px;
+  height: 500px;
+  background-color: lightblue;
   text-align: center;
 }
 
@@ -83,6 +87,25 @@
   left: 2%;
   width: 30px;
   height: 30px;
+}
+
+.RulesIcon {
+  position: absolute;
+  top: 93%;
+  left: 2%;
+  width: 30px;
+  height: 30px;
+}
+
+.Rules {
+  position: absolute;
+  top: 30px;
+  left: 280px;
+  width: 640px;
+  height: 440px;
+  background-color: darkslateblue;
+  color: white;
+  border: 0.5vh solid grey;
 }
 
 .Surrender {
