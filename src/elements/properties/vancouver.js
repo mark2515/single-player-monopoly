@@ -5,7 +5,7 @@ export const vancouver = {
     text: "Vancouver",
     elements: "Properties",
     level: 0,
-    update: 50,
-    leave: 10,
+    update: 250,
+    leave: 30,
     required: GetRandomGoods() 
 };

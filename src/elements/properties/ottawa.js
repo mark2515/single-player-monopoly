@@ -5,7 +5,7 @@ export const ottawa = {
     text: "Ottawa",
     elements: "Properties",
     level: 0,
-    update: 30,
-    leave: 15,
+    update: 150,
+    leave: 50,
     required: GetRandomGoods() 
 };

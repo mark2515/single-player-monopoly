@@ -32,8 +32,7 @@ export function Play() {
 
     const handleRoll = () => {
         if(rollAllow) {
-            //const randomNum = Math.floor(Math.random() * 6) + 1;
-            const randomNum = 3;
+            const randomNum = Math.floor(Math.random() * 6) + 1;
             setNumber(randomNum); 
             setPosition((position + randomNum) % 36);
         }
@@ -54,13 +53,12 @@ export function Play() {
         if(position - number < 0) {
             setRound(round => round + 1);
             setMoney(money => money + 100);
-            market.leave = Math.ceil(market.leave * 2.3);
-            toronto.leave += 5;
-            montreal.leave += 5;
-            vancouver.leave += 5;
-            calgary.leave += 5;
-            edmonton.leave += 5;
-            ottawa.leave += 5;
+            toronto.leave = Math.ceil(toronto.leave * 2.1);
+            montreal.leave = Math.ceil(montreal.leave * 2.2);
+            vancouver.leave = Math.ceil(vancouver.leave * 2.2);
+            calgary.leave = Math.ceil(calgary.leave * 2.3);
+            edmonton.leave = Math.ceil(edmonton.leave * 2.3);
+            ottawa.leave = Math.ceil(ottawa.leave * 2.5);
         };
     },[position, number])
 
