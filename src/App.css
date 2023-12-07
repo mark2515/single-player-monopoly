@@ -99,10 +99,10 @@
 
 .Rules {
   position: absolute;
-  top: 30px;
+  top: 5px;
   left: 280px;
   width: 640px;
-  height: 440px;
+  height: 485px;
   background-color: darkslateblue;
   color: white;
   border: 0.5vh solid grey;
