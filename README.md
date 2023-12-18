@@ -1,10 +1,9 @@
 # Game Rules
-
-• Each turn, you get to roll the dice once and advance the number of spaces indicated by the dice
-• The board consists of different types of Spaces: Properties, Market, and Chance, each offering distinct choices
-• Upon landing on a space, you must make a choice to complete your turn and continue moving forward
-• The game is won when your assets reach $15,000
-• The game ends if your assets fall into negative figures
+- Each turn, you get to roll the dice once and advance the number of spaces indicated by the dice
+- The board consists of different types of Spaces: Properties, Market, and Chance, each offering distinct choices
+- Upon landing on a space, you must make a choice to complete your turn and continue moving forward
+- The game is won when your assets reach $15,000
+- The game ends if your assets fall into negative figures
 
 ### [Properties]
 - Each Properties Space requires specific goods
