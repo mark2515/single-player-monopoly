@@ -1,4 +1,7 @@
-# Game Rules
+# single-player-monopoly
+You're not mistaken, one person can play Monopoly too. Come and experience it! [Visit Here](https://single-player-monopoly.vercel.app/)
+
+## Game Rules
 - Each turn, you get to roll the dice once and advance the number of spaces indicated by the dice
 - The board consists of different types of Spaces: Properties, Market, and Chance, each offering distinct choices
 - Upon landing on a space, you must make a choice to complete your turn and continue moving forward
@@ -16,3 +19,6 @@
 ### [Chance]
 - Random events: Gain or lose money
 - Draw: If the first good in your inventory matches the drawn good, you can sell it for three times the purchase price
+
+# Contributing
+If you want to contribute to this project, please fork this repository and create a pull request, or drop me an email at kha112@sfu.ca
