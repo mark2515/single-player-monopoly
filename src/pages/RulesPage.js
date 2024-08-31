@@ -1,6 +1,6 @@
 import { ReturnToHome } from "../modules/returnToHome";
 
-export function Rules() {
+export function RulesPage() {
     return (
         <div className="Outer">
             <div style={{position: 'absolute', left: '2%'}}>

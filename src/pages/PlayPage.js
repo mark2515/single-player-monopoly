@@ -20,7 +20,7 @@ import { edmonton } from "../elements/properties/edmonton";
 import { ottawa } from "../elements/properties/ottawa";
 import { GetRandomGoods } from "../utils/GetRandomGoods";
 
-export function Play() {
+export function PlayPage() {
     const [number, setNumber] = useState(0);
     const [round, setRound] = useState(1);
     const [position, setPosition] = useState(0);

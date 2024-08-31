@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ReturnToHome } from "../modules/returnToHome";
 
-export function Credits() {
+export function CreditsPage() {
     const [visible, setVisible] = useState(false);
     const handleClick = () => {
         setVisible(true)
@@ -12,7 +12,7 @@ export function Credits() {
             {!visible && (
                 <>
                     <p style={{fontWeight: 'bold'}}>Credits</p>
-                    This game was independently developed by Mark He. If you enjoy it, please give me a thumbs up!
+                    This game was independently developed by Mark He. If you enjoy it, please give him a thumbs up!
                 </>
             )}
             {visible && <p style={{fontWeight: 'bold'}}>Thank You !</p>}
