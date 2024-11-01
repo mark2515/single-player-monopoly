@@ -1,11 +1,3 @@
-.Home{
-  position: absolute;
-  width: 1000px;
-  height: 500px;
-  background-color: lightblue;
-  text-align: center;
-}
-
 .HomeButtons {
   background-color: #007bff;
   color: white;
