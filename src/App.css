@@ -1,13 +1,18 @@
 .HomeButtons {
   background-color: #007bff;
   color: white;
-  padding: 10px 15px;
+  padding: 10px 30px;
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
   display: inline-block;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.HomeButtons:hover {
+  background: rgb(0,3,255);
+background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
 }
 
 .Outer {

@@ -15,7 +15,7 @@ export function HomePage() {
                 <span></span>
                 <span></span>
                 <span></span>
-                <h1> Single-Player Monopoly </h1>
+                <h1>Single-Player Monopoly</h1>
                 <Link to="/play" className="HomeButtons"> PLAY </Link>
                 <br />
                 <Link to="/rules" className="HomeButtons"> RULES </Link>
