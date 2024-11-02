@@ -25,7 +25,7 @@ export function CreditsPage() {
                 <span></span>
                 <span></span>
                 <span></span>
-                <div style={{textAlign: 'center', fontSize: '24px'}}>
+                <div style={{textAlign: 'center', fontSize: '24px', zIndex: 10}}>
                 {!visible && (
                     <>
                         <p style={{fontWeight: 'bold'}}>Credits</p>
