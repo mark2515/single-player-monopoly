@@ -1,5 +1,5 @@
 # single-player-monopoly
-You're not mistaken, one person can play Monopoly too. Come and experience it! [Visit Here](https://single-player-monopoly.vercel.app/)
+You read that right, one person can indeed play Monopoly. Come try it out for yourself! [View Site](https://single-player-monopoly.vercel.app/)
 
 ## Game Rules
 - Each turn, you get to roll the dice once and advance the number of spaces indicated by the dice
