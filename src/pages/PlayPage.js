@@ -71,7 +71,7 @@ export function PlayPage() {
 
     useEffect(()=>{
         if( money >= 15000) {
-            navigate("/youWin");
+            navigate("/youWon");
         };
     },[money, navigate])
 

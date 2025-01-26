@@ -4,7 +4,7 @@ import { HomePage } from "./pages/HomePage";
 import { PlayPage } from "./pages/PlayPage";
 import { RulesPage } from "./pages/RulesPage";
 import { CreditsPage } from "./pages/CreditsPage";
-import { YouWinPage } from "./pages/YouWinPage";
+import { YouWonPage } from "./pages/YouWonPage";
 import { GameOverPage } from "./pages/GameOverPage";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
           <Route path="/play" element={<PlayPage />}/>
           <Route path="/rules" element={<RulesPage />}/>
           <Route path="/credits" element={<CreditsPage />}/>
-          <Route path="/youWin" element={<YouWinPage />}/>
+          <Route path="/youWon" element={<YouWonPage />}/>
           <Route path="/gameOver" element={<GameOverPage />}/>
           <Route path="*" element = {<h1> PAGE NOT FOUND </h1>}/>
         </Routes>
