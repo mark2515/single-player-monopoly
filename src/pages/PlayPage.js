@@ -54,12 +54,12 @@ export function PlayPage() {
         if(position - number < 0) {
             setRound(round => round + 1);
             setMoney(money => money + 100);
-            toronto.leave = Math.ceil(toronto.leave * 2.1);
-            montreal.leave = Math.ceil(montreal.leave * 2.2);
-            vancouver.leave = Math.ceil(vancouver.leave * 2.2);
-            calgary.leave = Math.ceil(calgary.leave * 2.3);
-            edmonton.leave = Math.ceil(edmonton.leave * 2.3);
-            ottawa.leave = Math.ceil(ottawa.leave * 2.5);
+            toronto.leave = Math.min(Math.ceil(toronto.leave * 2.1), toronto.update - 50);
+            montreal.leave = Math.min(Math.ceil(montreal.leave * 2.2), montreal.update - 50);
+            vancouver.leave = Math.min(Math.ceil(vancouver.leave * 2.2), vancouver.update - 50);
+            calgary.leave = Math.min(Math.ceil(calgary.leave * 2.3), calgary.update - 50);
+            edmonton.leave = Math.min(Math.ceil(edmonton.leave * 2.3), edmonton.update - 50);
+            ottawa.leave = Math.min(Math.ceil(ottawa.leave * 2.5), ottawa.update - 50);
         };
     },[position, number])
 
