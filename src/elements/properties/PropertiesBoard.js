@@ -1,6 +1,6 @@
 import { hasInvolved } from "../../utils/hasInvolved";
 
-export function PropertiesBoard({property, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow}) {
+export function PropertiesBoard({property, money, setMoney, goods, setGoods, setMarketVisible, setRollAllow, setPropertyUpdated}) {
 
     const handleEvent = (num) => {
 
@@ -31,6 +31,7 @@ export function PropertiesBoard({property, money, setMoney, goods, setGoods, set
 
             setMarketVisible(false);
             setRollAllow(true);
+            setPropertyUpdated && setPropertyUpdated(prev => !prev);
             return;
             
         }

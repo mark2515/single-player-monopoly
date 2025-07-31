@@ -4,7 +4,7 @@ import { MarketBoard } from "../elements/market/MarketBoard";
 import { PropertiesBoard } from "../elements/properties/PropertiesBoard";
 import { ChanceBoard } from "../elements/chance/ChanceBoard";
 
-export function DisplayEvents({ position, event, money, setMoney, goods, setGoods, setRollAllow}) {
+export function DisplayEvents({ position, event, money, setMoney, goods, setGoods, setRollAllow, setPropertyUpdated}) {
     const [marketVisible, setMarketVisible] = useState(true);
     const [lastPosition, setLastPosition] = useState(null);
 
@@ -25,7 +25,7 @@ export function DisplayEvents({ position, event, money, setMoney, goods, setGood
     }
     if (event === "Properties") {
         return (
-            marketVisible && <PropertiesBoard property={element[position]} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setMarketVisible={setMarketVisible} setRollAllow={setRollAllow}/>
+            marketVisible && <PropertiesBoard property={element[position]} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setMarketVisible={setMarketVisible} setRollAllow={setRollAllow} setPropertyUpdated={setPropertyUpdated}/>
         );
     }
     if (event === "Chance") {

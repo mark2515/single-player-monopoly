@@ -29,6 +29,7 @@ export function PlayPage() {
     const [spaceInfo, setSpaceInfo] = useState("");
     const [rulesShown, setRulesShown] = useState(false);
     const [rollAllow, setRollAllow] = useState(true);
+    const [propertyUpdated, setPropertyUpdated] = useState(false);
     const navigate = useNavigate();
 
     const handleRoll = () => {
@@ -62,6 +63,10 @@ export function PlayPage() {
             ottawa.leave = Math.min(Math.ceil(ottawa.leave * 2.5), ottawa.update - 50);
         };
     },[position, number])
+
+    useEffect(() => {
+        handleClick(element[position]);
+    }, [propertyUpdated, position]);
 
     useEffect(()=>{
         handleClick(element[position]);
@@ -99,7 +104,7 @@ export function PlayPage() {
                 />
             ))}
             <SpaceInfo spaceInfo={spaceInfo}/>
-            <DisplayEvents event={element[position].elements} position={position} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setRollAllow={setRollAllow}/>
+            <DisplayEvents event={element[position].elements} position={position} money={money} setMoney={setMoney} goods={goods} setGoods={setGoods} setRollAllow={setRollAllow} setPropertyUpdated={setPropertyUpdated}/>
             <GameRulesIcon rulesShown={rulesShown} setRulesShown={setRulesShown}/>
             {rulesShown && <ShowGameRules />}
             
